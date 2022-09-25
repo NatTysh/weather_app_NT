@@ -1,0 +1,70 @@
+body {
+  font-family: "Nunito", sans-serif;
+  padding: 30px;
+}
+h1 {
+  font-size: 17px;
+  text-align: center;
+  padding: 20px 10px 20px 0px;
+  margin: 0 auto;
+}
+h2 {
+  font-size: 40px;
+  text-align: center;
+}
+h3 {
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+  margin: 0 auto;
+  color: #5c636a;
+}
+
+.fivedayslist {
+  display: block;
+  text-align: center;
+  list-style-type: none;
+  color: rgb(167, 165, 165);
+  display: block;
+  font-size: 20px;
+  margin-top: 20px;
+  max-width: 180px;
+}
+.form {
+  margin: 0 auto;
+  padding: 0;
+}
+.icon {
+  color: #5c636a;
+}
+.city {
+  font-size: 35px;
+}
+.main-icon {
+  font-size: 40px;
+}
+.precipitation {
+  font-size: 15px;
+  padding: 0;
+}
+.wind {
+  font-size: 15px;
+  padding: 0;
+}
+.fa-umbrella {
+  padding-top: 10px;
+  font-size: 25px;
+}
+.weather-app {
+  border: 1px solid rgb(167, 165, 165);
+  border-radius: 10px;
+  padding: 15px;
+  margin: 20px;
+  max-height: 355px;
+  max-width: 650px;
+}
+.units {
+  position: relative;
+  top: -10px;
+  font-size: 15px;
+}

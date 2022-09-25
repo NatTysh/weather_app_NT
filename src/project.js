@@ -1,0 +1,85 @@
+function getCurrentDate(date) {
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  let day = days[date.getDay()];
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let sentence = `${day} ${hours}:${minutes}`;
+
+  return `${sentence}`;
+}
+
+let now = new Date();
+let todayDate = document.querySelector("#current-time");
+todayDate.innerHTML = getCurrentDate(now);
+
+function showWeather(response) {
+  document.querySelector("#current-city").innerHTML = response.data.name;
+  document.querySelector(
+    "#weather-description"
+  ).innerHTML = `${response.data.weather[0].main}!`;
+
+  let temperature = Math.round(response.data.main.temp);
+  let temp = document.querySelector("#tempAllLine");
+  temp.innerHTML = `${temperature}°C`;
+  let showHumidity = Math.round(response.data.main.humidity);
+  let showWind = Math.round(response.data.wind.speed);
+  let humidity = document.querySelector("#humidity");
+  let wind = document.querySelector("#wind");
+  humidity.innerHTML = `Humidity: ${showHumidity}%`;
+  wind.innerHTML = `Wind speed: ${showWind}km/h`;
+}
+
+function cityStart(city) {
+  let apiKey = "9cf0c4601d22d1093438ea4179820380";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeather);
+}
+
+function searchCity(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-input").value;
+  cityStart(city);
+}
+
+cityStart("Kyiv");
+
+let enterCity = document.querySelector("#enter-city");
+enterCity.addEventListener("submit", searchCity);
+
+function clickTemp(event) {
+  event.preventDefault();
+  let getCelsius = document.querySelector("#temperature");
+  getCelsius.innerHTML = "2°";
+}
+function clickTempFar(event) {
+  event.preventDefault();
+  let getFahrenheit = document.querySelector("#temperature");
+  getFahrenheit.innerHTML = "30°";
+}
+function clickCurrentButton(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
+function searchLocation(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let units = "metric";
+  let apiKey = "9cf0c4601d22d1093438ea4179820380";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=${units}&appid=${apiKey}`;
+  axios.get(apiUrl).then(showWeather);
+}
+
+let clickCelsius = document.querySelector("#celsius-link");
+clickCelsius.addEventListener("click", clickTemp);
+let clickFahrenheit = document.querySelector("#fahrenheit-link");
+clickFahrenheit.addEventListener("click", clickTempFar);
+let clickCurrent = document.querySelector("#currentButton");
+clickCurrent.addEventListener("click", clickCurrentButton);
