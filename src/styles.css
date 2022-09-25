@@ -71,5 +71,7 @@ h3 {
 .open-source {
   padding: 0px 0px 0px 120px;
   font-size: 13px;
+}
+.source {
   text-decoration: none;
 }
