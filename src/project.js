@@ -25,9 +25,11 @@ function showWeather(response) {
     "#weather-description"
   ).innerHTML = `${response.data.weather[0].main}!`;
 
+  celsiusTemperature = response.data.main.temp;
+
   let temperature = Math.round(response.data.main.temp);
-  let temp = document.querySelector("#tempAllLine");
-  temp.innerHTML = `${temperature}°C`;
+  let temp = document.querySelector("#temperature");
+  temp.innerHTML = `${temperature}°`;
   let showHumidity = Math.round(response.data.main.humidity);
   let showWind = Math.round(response.data.wind.speed);
   let humidity = document.querySelector("#humidity");
@@ -67,7 +69,8 @@ function clickTemp(event) {
 function clickTempFar(event) {
   event.preventDefault();
   let getFahrenheit = document.querySelector("#temperature");
-  getFahrenheit.innerHTML = "30°";
+  let farTemp = Math.round((celsiusTemperature * 9) / 5 + 32);
+  getFahrenheit.innerHTML = `${farTemp}°`;
 }
 function clickCurrentButton(event) {
   event.preventDefault();
@@ -89,3 +92,4 @@ let clickFahrenheit = document.querySelector("#fahrenheit-link");
 clickFahrenheit.addEventListener("click", clickTempFar);
 let clickCurrent = document.querySelector("#currentButton");
 clickCurrent.addEventListener("click", clickCurrentButton);
+let celsiusTemperature = null;
