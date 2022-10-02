@@ -64,7 +64,9 @@ h3 {
   position: relative;
   top: -10px;
   font-size: 15px;
+  font-size: 15px;
 }
+
 .open-source {
   padding: 10px;
   font-size: 12px;
@@ -76,4 +78,12 @@ h3 {
   margin: 20px;
   max-height: 365px;
   max-width: 650px;
+}
+.active {
+  color: #5c636a;
+  cursor: default;
+  text-decoration: none;
+}
+.active:hover {
+  text-decoration: none;
 }

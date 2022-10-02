@@ -63,12 +63,17 @@ enterCity.addEventListener("submit", searchCity);
 
 function clickTemp(event) {
   event.preventDefault();
+
+  clickCelsius.classList.add("active");
+  clickFahrenheit.classList.remove("active");
   let getCelsius = document.querySelector("#temperature");
-  getCelsius.innerHTML = "2°";
+  getCelsius.innerHTML = Math.round(celsiusTemperature);
 }
 function clickTempFar(event) {
   event.preventDefault();
   let getFahrenheit = document.querySelector("#temperature");
+  clickCelsius.classList.remove("active");
+  clickFahrenheit.classList.add("active");
   let farTemp = Math.round((celsiusTemperature * 9) / 5 + 32);
   getFahrenheit.innerHTML = `${farTemp}°`;
 }
