@@ -4,8 +4,7 @@ body {
 }
 h1 {
   font-size: 17px;
-  text-align: center;
-  padding: 20px 10px 20px 0px;
+  padding: 20px 0px 20px 0px;
   margin: 0 auto;
 }
 h2 {
@@ -36,7 +35,6 @@ h3 {
 }
 .icon {
   color: #5c636a;
-  padding: 10px;
 }
 .temp-forcast-max {
   color: #111214;
@@ -46,13 +44,16 @@ h3 {
 }
 .city {
   font-size: 35px;
+  padding: 0px;
 }
 .main-icon {
-  font-size: 40px;
+  font-size: 60px;
+  margin-top: 0px;
 }
 .precipitation {
   font-size: 15px;
   padding: 0;
+  text-align: left;
 }
 .wind {
   font-size: 15px;
@@ -93,7 +94,4 @@ h3 {
 }
 .active:hover {
   text-decoration: none;
-}
-.image {
-  max-width: 50px;
 }
