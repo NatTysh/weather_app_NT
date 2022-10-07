@@ -95,3 +95,6 @@ h3 {
 .active:hover {
   text-decoration: none;
 }
+.col-4 {
+  text-align: center;
+}
