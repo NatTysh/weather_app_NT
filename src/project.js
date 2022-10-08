@@ -91,6 +91,30 @@ function searchLocation(position) {
   axios.get(apiUrl).then(showWeather);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = `
+   <ul class="fivedayslist">
+                   <li class="dayone" id="dayone">
+                      <div class="row">
+                      <div class="col-3">
+                      Mon 
+                      </div>
+                      <div class="col-3">
+                      <span class="icon"> <i class="fa-solid fa-sun"></i> </span>
+                      </div>
+                      <div class="col-3">
+                      <span class="temp-min">2°</span> 
+                      </div>
+                       <div class="col-3">
+                      <span class="temp-forcast-max">4°</span> 
+                      </div>
+                      </div>
+                   </li>
+                </ul>
+  `;
+}
+
 let clickCelsius = document.querySelector("#celsius-link");
 clickCelsius.addEventListener("click", clickTemp);
 let clickFahrenheit = document.querySelector("#fahrenheit-link");
@@ -98,3 +122,5 @@ clickFahrenheit.addEventListener("click", clickTempFar);
 let clickCurrent = document.querySelector("#currentButton");
 clickCurrent.addEventListener("click", clickCurrentButton);
 let celsiusTemperature = null;
+
+displayForecast();
