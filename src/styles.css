@@ -29,9 +29,11 @@ h3 {
   margin-top: 20px;
   max-width: 170px;
 }
-.form {
-  margin: 0 auto;
-  padding: 0;
+.mb-3 {
+  margin: 0px 0px 0px 17px;
+}
+button {
+  margin: 0px 0px 0px 17px;
 }
 .icon {
   color: #5c636a;
@@ -50,15 +52,13 @@ h3 {
   font-size: 60px;
   margin-top: 0px;
 }
-.precipitation {
-  font-size: 15px;
-  padding: 0;
-  text-align: left;
-}
+.precipitation,
 .wind {
-  font-size: 15px;
+  font-size: 14px;
   padding: 0;
+  text-align: center;
 }
+
 .fa-umbrella {
   padding-top: 10px;
   font-size: 25px;

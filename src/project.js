@@ -35,7 +35,7 @@ function showWeather(response) {
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
   humidity.innerHTML = `Humidity: ${showHumidity}%`;
-  wind.innerHTML = `Wind speed: ${showWind}km/h`;
+  wind.innerHTML = `Wind: ${showWind}km/h`;
   let icon = document.querySelector("#icon");
   let showicon = response.data.weather[0].icon;
   icon.setAttribute(
