@@ -93,8 +93,14 @@ function searchLocation(position) {
 
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerHTML = `
-   <ul class="fivedayslist">
+  let forecastHTML = "";
+  let forecastDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+  forecastDays.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <ul class="fivedayslist">
                    <li class="dayone" id="dayone">
                       <div class="row">
                       <div class="col-3">
@@ -111,8 +117,11 @@ function displayForecast() {
                       </div>
                       </div>
                    </li>
-                </ul>
+                   </ul>
   `;
+  });
+
+  forecastElement.innerHTML = forecastHTML;
 }
 
 let clickCelsius = document.querySelector("#celsius-link");
