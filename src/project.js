@@ -104,7 +104,7 @@ function displayForecast() {
                    <li class="dayone" id="dayone">
                       <div class="row">
                       <div class="col-3">
-                      Mon 
+                      ${day}
                       </div>
                       <div class="col-3">
                       <span class="icon"> <i class="fa-solid fa-sun"></i> </span>
