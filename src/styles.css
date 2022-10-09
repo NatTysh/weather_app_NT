@@ -13,9 +13,8 @@ h1 {
   text-align: center;
   list-style-type: none;
   color: rgb(138, 138, 138);
-  display: block;
-  font-size: 20px;
-  margin-top: 20px;
+  font-size: 17px;
+  margin-top: 18px;
   max-width: 170px;
 }
 .mb-3 {
@@ -52,7 +51,7 @@ button {
 .weather-app {
   border: 1px solid rgb(167, 165, 165);
   border-radius: 10px;
-  padding: 15px;
+  padding: 15px 0px 0px 0px;
 }
 .units {
   position: relative;
