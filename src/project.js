@@ -101,35 +101,50 @@ function searchLocation(position) {
   axios.get(apiUrl).then(showWeather);
 }
 
+function formatForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = "";
-  let forecastDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-  forecastDays.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
     <ul class="fivedayslist">
                    <li class="dayone" id="dayone">
                       <div class="row">
                       <div class="col-3">
-                      ${day}
+                      ${formatForecastDay(forecastDay.dt)}
                       </div>
                       <div class="col-3">
-                      <span class="icon"> <i class="fa-solid fa-sun"></i> </span>
+                      <span class="icon"> 
+                      <img src="http://openweathermap.org/img/wn/${
+                        forecastDay.weather[0].icon
+                      }@2x.png" alt="" width="40" /> </span>
                       </div>
                       <div class="col-3">
-                      <span class="temp-min">2°</span> 
+                      <span class="temp-min">${Math.round(
+                        forecastDay.temp.min
+                      )}°</span> 
                       </div>
                        <div class="col-3">
-                      <span class="temp-forcast-max">4°</span> 
+                      <span class="temp-forcast-max">${Math.round(
+                        forecastDay.temp.max
+                      )}°</span> 
                       </div>
                       </div>
                    </li>
                    </ul>
   `;
+    }
   });
 
   forecastElement.innerHTML = forecastHTML;
