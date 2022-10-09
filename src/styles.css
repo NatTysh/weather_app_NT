@@ -7,23 +7,12 @@ h1 {
   padding: 20px 0px 20px 0px;
   margin: 0 auto;
 }
-h2 {
-  font-size: 40px;
-  text-align: center;
-}
-h3 {
-  font-size: 20px;
-  text-align: center;
-  padding: 10px;
-  margin: 0 auto;
-  color: #5c636a;
-}
 
 .fivedayslist {
   display: block;
   text-align: center;
   list-style-type: none;
-  color: rgb(167, 165, 165);
+  color: rgb(138, 138, 138);
   display: block;
   font-size: 20px;
   margin-top: 20px;
@@ -35,11 +24,12 @@ h3 {
 button {
   margin: 0px 0px 0px 17px;
 }
-.icon {
-  color: #5c636a;
+
+.temp-min {
+  color: rgb(180, 178, 178);
 }
-.temp-forcast-max {
-  color: #111214;
+.temp-value {
+  font-size: 40px;
 }
 .col-3 {
   padding: 0px;
@@ -48,21 +38,17 @@ button {
   font-size: 35px;
   padding: 0px;
 }
-.main-icon {
-  font-size: 60px;
-  margin-top: 0px;
-}
+
 .precipitation,
 .wind {
   font-size: 14px;
   padding: 0;
   text-align: center;
+  display: block;
+  position: relative;
+  top: 10px;
 }
 
-.fa-umbrella {
-  padding-top: 10px;
-  font-size: 25px;
-}
 .weather-app {
   border: 1px solid rgb(167, 165, 165);
   border-radius: 10px;
@@ -71,8 +57,7 @@ button {
 .units {
   position: relative;
   top: -10px;
-  font-size: 15px;
-  font-size: 15px;
+  font-size: 25px;
 }
 
 .open-source {
@@ -87,14 +72,11 @@ button {
   max-height: 365px;
   max-width: 650px;
 }
-.active {
-  color: #5c636a;
-  cursor: default;
-  text-decoration: none;
-}
-.active:hover {
-  text-decoration: none;
-}
+
 .col-4 {
   text-align: center;
+}
+.main-icon {
+  position: relative;
+  top: -27px;
 }

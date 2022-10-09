@@ -71,22 +71,6 @@ cityStart("Kyiv");
 let enterCity = document.querySelector("#enter-city");
 enterCity.addEventListener("submit", searchCity);
 
-function clickTemp(event) {
-  event.preventDefault();
-
-  clickCelsius.classList.add("active");
-  clickFahrenheit.classList.remove("active");
-  let getCelsius = document.querySelector("#temperature");
-  getCelsius.innerHTML = Math.round(celsiusTemperature);
-}
-function clickTempFar(event) {
-  event.preventDefault();
-  let getFahrenheit = document.querySelector("#temperature");
-  clickCelsius.classList.remove("active");
-  clickFahrenheit.classList.add("active");
-  let farTemp = Math.round((celsiusTemperature * 9) / 5 + 32);
-  getFahrenheit.innerHTML = `${farTemp}°`;
-}
 function clickCurrentButton(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
@@ -150,10 +134,6 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-let clickCelsius = document.querySelector("#celsius-link");
-clickCelsius.addEventListener("click", clickTemp);
-let clickFahrenheit = document.querySelector("#fahrenheit-link");
-clickFahrenheit.addEventListener("click", clickTempFar);
 let clickCurrent = document.querySelector("#currentButton");
 clickCurrent.addEventListener("click", clickCurrentButton);
 let celsiusTemperature = null;
